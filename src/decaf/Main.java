@@ -32,10 +32,13 @@ class Main {
 		        			switch (token.getType())
 		        			{
 		        			case DecafLexer.ID:
-		        				type = " IDENTIFIER";
+		        				type = " IDENTIFIER ";
+		        				break;
+						case DecafLexer.CHAR:
+		        				type = " CHARLITERAL ";
 		        				break;
 		        			}
-		        			System.out.println (token.getLine() + type + " " + text);
+		        			System.out.println (token.getLine() + type + text);
 		        		}
 		        		done = true;
         			} catch(Exception e) {

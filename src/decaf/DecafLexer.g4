@@ -17,10 +17,9 @@ tokens
 LCURLY : '{';
 RCURLY : '}';
 
-ID  :
-  ('a'..'z' | 'A'..'Z')+;
+ID  : ('a'..'z' | 'A'..'Z')+;
 
-WS_ : (' ' | '\n' ) -> skip;
+WS : [ \t\r\n]+ -> skip;
 
 SL_COMMENT : '//' (~'\n')* '\n' -> skip;
 
