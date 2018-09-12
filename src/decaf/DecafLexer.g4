@@ -9,10 +9,7 @@ options
   language=Java;
 }
 
-tokens
-{
-  TK_class
-}
+CLASS : 'class Program';
 
 LCURLY : '{';
 RCURLY : '}';
@@ -29,16 +26,18 @@ BOOLEAN : 'boolean';
 BOOLEANLITERAL : 'true'|'false';
 BREAK : 'break';
 CALLOUT: 'callout';
-CLASS : 'class';
 CONTINUE : 'continue';
 ELSE : 'else';
 FOR: 'for';
 RETURN : 'return';
 VOID : 'void';
 
+EXCL : '!';
 AND : '&&';
 OR : '||';
 DEFINE: '=';
+ADD : '+=';
+SUBTRACT : '-=';
 EQ : '==';
 NEQ : '!=';
 GT : '>';
