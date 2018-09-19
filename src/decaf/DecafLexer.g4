@@ -32,9 +32,9 @@ FOR: 'for';
 RETURN : 'return';
 VOID : 'void';
 
-EXCL : '!';
 AND : '&&';
 OR : '||';
+EXCL : '!';
 DEFINE: '=';
 ADD : '+=';
 SUBTRACT : '-=';
@@ -61,7 +61,7 @@ ID: (LETTER|'_')(LETTER|DIGIT|'_')*;
 
 CHAR: '\''(ESC|LETTER|DIGIT|' '|'!'|'#'|'$'|'%'|'&'|'('|')'|'*'|'+'|','|'-'|'.'|'/'|':'|';'|'<'|'='|'>'|'?'|'@'|'['|']'|'^'|'_'|'´'|'`'|'{'|'|'|'}'|'~')'\'';
 STRING: '"'(LETTER|DIGIT|' '|'!'|'"'|'#'|'$'|'%'|'&'|'\\\''|'('|')'|'*'|'+'|','|'-'|'.'|'/'|':'|';'|'<'|'='|'>'|'?'|'@'|'['|']'|'^'|'_'|'´'|'`'|'{'|'|'|'}'|'~'|'\t'|'\\'|'\"')*'"';
-INTLITERAL : DIGIT(DIGIT)*~'x';
+INTLITERAL : DIGIT(DIGIT)*;
 HEXLITERAL : '0x'(DIGIT|HEXDIGIT)+;
 
 fragment LETTER : ('a'..'z'|'A'..'Z');
