@@ -20,8 +20,6 @@ RSQBR : ']';
 LPAR : '(';
 RPAR : ')';
 
-IF : 'if';
-INT: 'int';
 BOOLEAN : 'boolean';
 BOOLEANLITERAL : 'true'|'false';
 BREAK : 'break';
@@ -29,6 +27,8 @@ CALLOUT: 'callout';
 CONTINUE : 'continue';
 ELSE : 'else';
 FOR: 'for';
+IF : 'if';
+INT: 'int';
 RETURN : 'return';
 VOID : 'void';
 
