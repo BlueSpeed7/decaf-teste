@@ -63,12 +63,12 @@ public class DecafSymbolsAndScopes extends DecafParserBaseListener {
     }
 
     @Override
-    public void enterDecl(DecafParser.DeclContext ctx) {
+    public void enterVar_decl(DecafParser.Var_declContext ctx) {
         defineVar(ctx.type(), ctx.ID().getSymbol());
     }
 
     @Override
-    public void exitDecl(DecafParser.DeclContext ctx) {
+    public void exitVar_decl(DecafParser.Var_declContext ctx) {
         String name = ctx.ID().getSymbol().getText();
         Symbol var = currentScope.resolve(name);
         if ( var==null ) {
