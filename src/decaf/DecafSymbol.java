@@ -13,7 +13,7 @@ import org.antlr.symtab.Symbol;
 import org.antlr.symtab.Type;
 
 public class DecafSymbol { // A generic programming language symbol
-    public static enum Type {tINVALID, tVOID, tINT, tFLOAT}
+    public static enum Type {tINVALID, tVOID, tINT}
 
     String name;      // All symbols at least have a name
     Type type;
