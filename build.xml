@@ -87,7 +87,7 @@
   </target>
 
   <target name="compile" depends="parser">
-    <javac srcdir="${java}:${src}" destdir="${classes}" debug="on">
+    <javac includeantruntime="false" srcdir="${java}:${src}" destdir="${classes}" debug="on">
       <classpath refid="libraries"/>
     </javac>
   </target>
