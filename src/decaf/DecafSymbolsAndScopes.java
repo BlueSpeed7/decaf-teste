@@ -33,8 +33,8 @@ public class DecafSymbolsAndScopes extends DecafParserBaseListener {
     @Override
     public void enterMethod_decl(DecafParser.Method_declContext ctx) {
         String name = ctx.id().getText();
-        int typeTokenType = ctx.type().start.getType();
-        DecafSymbol.Type type = this.getType(typeTokenType);
+        // int typeTokenType = ctx.type().getStart().getType();
+        // DecafSymbol.Type type = this.getType(typeTokenType);
 
         // push new scope by making new one that points to enclosing scope
         FunctionSymbol function = new FunctionSymbol(name);
@@ -54,7 +54,7 @@ public class DecafSymbolsAndScopes extends DecafParserBaseListener {
     public void enterBlock(DecafParser.BlockContext ctx) {
         LocalScope l = new LocalScope(currentScope);
         saveScope(ctx, currentScope);
-        // pushScope(l);
+        pushScope(l);
     }
 
     @Override
@@ -80,7 +80,7 @@ public class DecafSymbolsAndScopes extends DecafParserBaseListener {
     }
 
     void defineVar(DecafParser.TypeContext typeCtx, Token nameToken) {
-        int typeTokenType = typeCtx.start.getType();
+        // int typeTokenType = typeCtx.start.getType();
         VariableSymbol var = new VariableSymbol(nameToken.getText());
 
         // DecafSymbol.Type type = this.getType(typeTokenType);
@@ -130,8 +130,8 @@ public class DecafSymbolsAndScopes extends DecafParserBaseListener {
      */
     public static DecafSymbol.Type getType(int tokenType) {
         switch ( tokenType ) {
-            case DecafParser.VOID :  return DecafSymbol.Type.tVOID;
-            case DecafParser.INTLITERAL :   return DecafSymbol.Type.tINT;
+            case DecafParser.VOID : return DecafSymbol.Type.tVOID;
+            case DecafParser.INTLITERAL : return DecafSymbol.Type.tINT;
 	    case DecafParser.BOOLEAN : return DecafSymbol.Type.tBOOLEAN;
         }
         return DecafSymbol.Type.tINVALID;

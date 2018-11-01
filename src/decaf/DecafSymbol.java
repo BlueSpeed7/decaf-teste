@@ -20,7 +20,7 @@ public class DecafSymbol { // A generic programming language symbol
     Scope scope;      // All symbols know what scope contains them.
 
     public DecafSymbol(String name) { this.name = name; }
-    public DecafSymbol(String name, Type type) { this(name); this.type = type; }
+    public DecafSymbol(String name, Type type) { this.name = name; this.type = type; }
     public String getName() { return name; }
 
     public String toString() {
